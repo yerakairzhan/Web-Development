@@ -1,11 +1,9 @@
-/* Основные стили */
 body {
     font-family: Arial, sans-serif;
-    background-color: #020202;
+    background-color: #f4f4f5;
     margin: 0;
     padding: 0;
 }
-
 
 .container {
     display: flex;
@@ -15,7 +13,6 @@ body {
     padding: 20px;
 }
 
-
 .profile {
     display: flex;
     flex-direction: column;
@@ -24,9 +21,8 @@ body {
 }
 
 .profile__image {
-    margin-bottom: 20px;
+    margin-right: 20px;
 }
-
 
 .logo {
     width: 500px;
@@ -34,7 +30,7 @@ body {
 }
 
 .form-box {
-    background: #040404;
+    background: #fff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -45,25 +41,27 @@ body {
 h1 {
     font-family: 'Segoe UI', sans-serif;
     font-size: 32px;
-    color: #f4f4f5;
+    color: #0d63f5;
 }
 
 form input {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
-    border: 1px solid #131314;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    color: white;
-    background-color: #2c2f32;
+}
+
+form input::placeholder {
+    color: #888;
 }
 
 button {
     width: 100%;
     padding: 10px;
     background-color: #0d63f5;
-    color: #f4f4f5;
+    color: white;
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -72,15 +70,31 @@ button {
 }
 
 button:hover {
-    background-color: #0d63f5;
+    background-color:#0d63f5;
+}
+
+.green-button {
+    background-color: #1fba58;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.green-button:hover {
+    background-color: #17a14e;
 }
 
 p {
     font-size: 14px;
+    color: #0d63f5;
 }
 
 .login-link a {
-    color: #0d63f5;
+    color:#0d63f5;
     text-decoration: none;
 }
 

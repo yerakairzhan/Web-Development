@@ -1,0 +1,122 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.block1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #0067b8;
+}
+
+.block2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    background-color: blue;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.block2 a {
+    color: white
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 500px;
+    background-image: url('pic1.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px;
+}
+
+.hero-content {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: black;
+    padding: 20px;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.hero-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.shop-btn {
+    background-color: #0067b8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.block4 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 500px;
+}
+
+.block4 a {
+    text-decoration: none;
+    color: #0067b8;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 900px) {
+    .hero-section {
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
