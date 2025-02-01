@@ -1,1 +1,0 @@
-khanacademy folder
