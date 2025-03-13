@@ -1,9 +1,9 @@
 <div>
 
-  <h1>Каталог товаров</h1>
+  <h1>Catalog</h1>
 
   <div class = 'category-buttons'>
-    <label for="category">Выбери категорию:</label>
+    <label for="category">Choose:</label>
     <select id="category" (change) = "selectCategory($event)">
       <option *ngFor = "let category of categories" [value]="category">
         {{category}}
@@ -19,14 +19,14 @@
       <p>⭐ {{ product.rating }}</p>
       <p>❤️ {{product.likes}}</p>
 
-      <a [href]="product.link" target="_blank">Подробнее</a>
+      <a [href]="product.link" target="_blank">More</a>
 
-      <button (click) = "likeProduct(product.id)">👍 Like</button>
-      <button (click) = "removeProduct(product.id)">🗑 Удалить</button>
-    
+      <button (click) = "likeProduct(product.id)">👍 Like UP</button>
+      <button (click) = "removeProduct(product.id)">👎 Delete</button>
+
       <div class = 'share-buttons'>
-        <button (click)="shareProduct(product.link, 'whatsapp')">📲 Поделиться в WhatsApp</button>
-        <button (click)="shareProduct(product.link, 'telegram')">📩 Поделиться в Telegram</button>
+        <button (click)="shareProduct(product.link, 'whatsapp')">WhatsApp</button>
+        <button (click)="shareProduct(product.link, 'telegram')">Telegram</button>
       </div>
     </div>
   </div>
