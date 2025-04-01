@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-album-detail',
   imports: [RouterModule, CommonModule],
   templateUrl: './album-detail.component.html',
-  styleUrl: './album-detail.component.scss',
+  styleUrl: './album-detail.component.css',
 })
 export class AlbumDetailComponent {
   private route = inject(ActivatedRoute);

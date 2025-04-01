@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AlbumCardComponent } from '../album-card/album-card.component';
 import { AlbumsList } from './albums-list';
-import { HttpClient } from '@angular/common/http';
+import { AlbumsService } from './albums.service';
 
 @Component({
   selector: 'app-albums',
@@ -12,22 +12,41 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AlbumsComponent {
   albums: AlbumsList[] = [];
+  editedTitle = signal('');
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private albumsService: AlbumsService, private router: Router) {
     this.fetchAlbums();
   }
 
   fetchAlbums(): void {
-    this.http
-      .get<AlbumsList[]>('https://jsonplaceholder.typicode.com/albums')
-      .subscribe((data) => (this.albums = data));
+    this.albumsService.getAlbums().subscribe({
+      next: (data) => (this.albums = data),
+      error: (err) => console.error('Error fetching albums:', err),
+    });
   }
 
-  deleteAlbum(id: number): void {
-    this.albums = this.albums.filter((album) => album.id !== id);
+  updateTitle(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.editedTitle.set(input.value);
   }
 
-  openAlbumDetail(id: number): void {
-    this.router.navigate(['/albums', id]);
+  saveChanges(album: AlbumsList) {
+    if (!album) return;
+
+    const updatedAlbum: AlbumsList = {
+      id: album.id,
+      userId: album.userId,
+      title: this.editedTitle(),
+    };
+
+    this.albumsService.updateAlbum(updatedAlbum).subscribe({
+      next: (response) => {
+        this.albums = this.albums.map((a) =>
+          a.id === response.id ? { ...a, title: response.title } : a
+        );
+        console.log('Album updated:', response);
+      },
+      error: (err) => console.error('Error updating album:', err),
+    });
   }
 }

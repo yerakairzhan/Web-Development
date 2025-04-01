@@ -2,12 +2,13 @@
   <h1>Albums List</h1>
   <ul>
     @for (album of albums; track album.id) {
-    <app-album-card
-      [album]="album"
-      (delete)="deleteAlbum($event)"
-      (openDetail)="openAlbumDetail($event)"
-    >
-    </app-album-card>
+      <li>
+        <app-album-card
+          [album]="album"
+          (delete)="deleteAlbum($event)"
+          (openDetail)="openAlbumDetail($event)"
+        ></app-album-card>
+      </li>
     }
   </ul>
 </section>

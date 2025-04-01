@@ -1,10 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AlbumsList } from '../albums/albums-list';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-album-card',
-  imports: [RouterModule],
   templateUrl: './album-card.component.html',
   styleUrl: './album-card.component.scss',
 })
@@ -13,11 +11,11 @@ export class AlbumCardComponent {
   @Output() delete = new EventEmitter<number>();
   @Output() openDetail = new EventEmitter<number>();
 
-  onDelete(): void {
+  onDelete() {
     this.delete.emit(this.album.id);
   }
 
-  onOpenDetail(): void {
+  onOpenDetail() {
     this.openDetail.emit(this.album.id);
   }
 }

@@ -1,1 +1,1 @@
-ng serve 
+run "ng serve" 
