@@ -4,9 +4,13 @@
   <p><strong>ID:</strong> {{ album()?.id }}</p>
 
   <label>
-    <strong>Title:</strong>
+    <h3>Name: {{ album()?.title }}</h3>
+  </label>
+
+  <label>
+    <strong>Write a Title:</strong>
     <input
-      [value]="editedTitle()"
+
       (input)="onTitleChange($event)"
       type="text"
     />
@@ -14,7 +18,7 @@
 
   <div class="buttons">
     <button (click)="saveChanges()">Save</button>
-    <button (click)="goBack()">Back</button>
+    <button (click)="goBack()">Return</button>
     <a [routerLink]="['/albums', album()?.id, 'photos']">Photos</a>
   </div>
 </div>
